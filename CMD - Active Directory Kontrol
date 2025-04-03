@@ -1,0 +1,6 @@
+# Replikasyon kontrolleri
+Repadmin /replsummary
+Repadmin /showrepl
+
+# FSMO Rollerin durum kontrolleri
+netdom query fsmo
