@@ -1,0 +1,1 @@
+Invoke-Command -ComputerName “UzakBilgisayarAdi” -Credential (Get-Credential) -ScriptBlock { Get-WmiObject -Class Win32_Product | Select-Object Name, Version }
