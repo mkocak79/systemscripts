@@ -1,0 +1,1 @@
+Send-MailMessage -SmtpServer mysmtp.com -Port 25 -From user@domain.com -To user@domain.com -Subject test -Body test
