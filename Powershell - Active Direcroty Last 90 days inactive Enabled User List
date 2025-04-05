@@ -1,0 +1,7 @@
+$DaysInactive = 90
+$Time = (Get-Date).AddDays(-$DaysInactive)
+$Server = "abc.lan"
+
+Get-ADUser -Filter {Enabled -eq $true -and LastLogonTimeStamp -lt $Time} -Server $Server -Properties SamAccountName, LastLogonTimeStamp, Enabled |
+Select-Object SamAccountName, @{Name="LastLogonDate";Expression={[DateTime]::FromFileTime($_.LastLogonTimeStamp)}} |
+Sort-Object LastLogonDate
