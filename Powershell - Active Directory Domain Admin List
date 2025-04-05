@@ -1,0 +1,6 @@
+$Server = "domainadı"
+
+Get-ADGroupMember -Identity "Domain Admins" -Server $Server -Recursive | 
+Where-Object { $_.objectClass -eq "user" } | 
+Get-ADUser -Server $Server -Properties DisplayName, SamAccountName, Enabled | 
+Select-Object Name, SamAccountName, DisplayName, Enabled
