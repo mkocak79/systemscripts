@@ -1,0 +1,1 @@
+IdentityLogonEvents | where ActionType == “LogonFailed” | where FailureReason contains “Password” | summarize FailedAttempts = count() by AccountName | order by FailedAttempts desc
