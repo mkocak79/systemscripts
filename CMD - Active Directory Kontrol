@@ -4,3 +4,7 @@ Repadmin /showrepl
 
 # FSMO Rollerin durum kontrolleri
 netdom query fsmo
+
+#Client logon info
+dsregcmd /status
+echo %logonserver%
