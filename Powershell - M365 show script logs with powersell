@@ -1,0 +1,14 @@
+union DeviceProcessEvents, DeviceNetworkEvents
+| where FileName in~ ("powershell.exe", "powershell_ise.exe")
+| where InitiatingProcessFileName != "ccmexec.exe" // SCCM exclude
+| where ProcessCommandLine has_any("WebClient",
+ "DownloadFile",
+ "DownloadData",
+ "DownloadString",
+"WebRequest",
+"Shellcode",
+"http",
+"https")
+| project Timestamp, DeviceName, InitiatingProcessFileName, InitiatingProcessCommandLine,
+FileName, ProcessCommandLine, RemoteIP, RemoteUrl, RemotePort, RemoteIPType
+| top 100 by Timestamp
