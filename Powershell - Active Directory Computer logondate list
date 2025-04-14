@@ -1,0 +1,1 @@
+Get-ADComputer -Filter {OperatingSystem -like "*Server*"} -Server domainname -Properties Name, LastLogonDate | Sort-Object LastLogonDate -Descending | Select-Object Name, LastLogonDate
