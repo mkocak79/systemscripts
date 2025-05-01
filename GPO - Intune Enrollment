@@ -1,0 +1,3 @@
+Computer Configuration – Policies – Administrative Templates – Windows Components – MDM. 
+Here configure the Enable automatic MDM Emrollment using default Azure AD credentials. 
+Set the policy to enable and set the Select Credential Type to Use to User Credential.
