@@ -1,1 +1,4 @@
 Get-MpPreference
+
+#AD jonin status
+dsregcmd /status
