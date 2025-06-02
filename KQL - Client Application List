@@ -1,5 +1,5 @@
 DeviceTvmSoftwareInventory
-| where SoftwareName contains “uygulama adı”
+| where SoftwareName contains "uygulama adı"
 | join kind=leftouter (DeviceInfo | project DeviceName, LoggedOnUsers) on DeviceName
 | summarize arg_max(SoftwareVersion, *) by DeviceName
 | project DeviceName, LoggedOnUsers, SoftwareName, SoftwareVersion, SoftwareVendor
