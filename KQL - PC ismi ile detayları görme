@@ -1,0 +1,8 @@
+DeviceInfo
+| where DeviceName contains "name"
+| project DeviceId, 
+DeviceName, 
+ClientVersion,
+OSPlatform,
+JoinType,
+OnboardingStatus
