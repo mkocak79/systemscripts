@@ -1,4 +1,7 @@
 Get-MpPreference
+Get-MpComputerStatus
+Get-MDEAgentStatus
+sc query sense
 
 #AD jonin status
 dsregcmd /status
