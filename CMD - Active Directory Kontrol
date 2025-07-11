@@ -8,3 +8,7 @@ netdom query fsmo
 #Client logon info
 dsregcmd /status
 echo %logonserver%
+
+#Client Policy Update and Info
+gpupdate force
+gpresult /h c:\temp\gpresult.html
