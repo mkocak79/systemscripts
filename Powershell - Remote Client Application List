@@ -1,3 +1,9 @@
 Invoke-Command -ComputerName “UzakBilgisayarAdi” -Credential (Get-Credential) -ScriptBlock { Get-WmiObject -Class Win32_Product | Select-Object Name, Version }
 
-Local PC de çalışacak komut: Get-WmiObject -Class Win32_Product | Select-Object Name, Version 
+#Local PC'den Powershell ile Program Kaldırma
+Get-WmiObject -Class Win32_Product | Select-Object Name, Version 
+#listedeki isim aşağıya yazılır.
+$programName = "Programadı"
+$msiApp = Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -like "*$programName*" }
+$msiApp.Uninstall()
+
