@@ -1,0 +1,10 @@
+Get-CimInstance -ClassName MSFT_NetTCPConnection `
+  -Namespace root/StandardCimv2 |
+  Where-Object {
+    $_.RemoteAddress -notin @("0.0.0.0","::","127.0.0.1")
+  } |
+  Select-Object `
+    @{Name="LocalHostname";Expression={$env:COMPUTERNAME}},
+    RemoteAddress,
+    RemotePort,
+    State
