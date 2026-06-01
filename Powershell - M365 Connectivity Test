@@ -1,0 +1,2 @@
+Test-NetConnection login.microsoftonline.com -Port 443
+Test-NetConnection outlook.office365.com -Port 443
