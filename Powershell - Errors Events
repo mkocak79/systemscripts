@@ -1,0 +1,1 @@
+Get-WinEvent -LogName System | where {$_.LevelDisplayName -eq "Error"} | select -First 20
