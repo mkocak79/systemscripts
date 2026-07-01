@@ -2,3 +2,5 @@ Tüm system eventlerini görme;
 Get-WinEvent -LogName System | where {$_.LevelDisplayName -eq "Error"} | select -First 20
 Tüm system eventlerini info hariç görme
 Get-WinEvent -LogName System | where {$_.LevelDisplayName -ne "Information"} | select -First 20
+Gelen eventlerin tüm datasını görme
+Get-WinEvent -LogName System | where {$_.LevelDisplayName -ne "Information"} | select -First 20 | Select-Object -ExpandProperty Message
