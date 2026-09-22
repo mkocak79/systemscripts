@@ -1,0 +1,20 @@
+Bir kişi için gelmesi:
+
+Get-Mailbox kullanici@firma.com |
+Select-Object DisplayName,
+PrimarySmtpAddress,
+ForwardingAddress,
+ForwardingSmtpAddress,
+DeliverToMailboxAndForward
+
+Tüm kullanıcıları bir liste halinde export:
+
+Get-Mailbox -ResultSize Unlimited |
+Where-Object {$_.ForwardingAddress -or $_.ForwardingSmtpAddress} |
+Select-Object `
+DisplayName,
+PrimarySmtpAddress,
+ForwardingSmtpAddress,
+DeliverToMailboxAndForward |
+Sort-Object DisplayName |
+Export-Csv "C:\Temp\ExchangeForwardingReport.csv" -NoTypeInformation -Encoding UTF8
