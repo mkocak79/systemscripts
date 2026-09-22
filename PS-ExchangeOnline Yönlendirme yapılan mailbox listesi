@@ -1,3 +1,7 @@
+Öncelikle aşağıdaki komut ile Exchange online bağlanması gereklidir 
+
+Connect-ExchangeOnline
+
 Bir kişi için gelmesi:
 
 Get-Mailbox kullanici@firma.com |
