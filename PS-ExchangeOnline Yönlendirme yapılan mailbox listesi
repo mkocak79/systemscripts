@@ -1,8 +1,8 @@
-Öncelikle aşağıdaki komut ile Exchange online bağlanması gereklidir 
+#Öncelikle aşağıdaki komut ile Exchange online bağlanması gereklidir 
 
 Connect-ExchangeOnline
 
-Bir kişi için gelmesi:
+#Bir kişi için gelmesi:
 
 Get-Mailbox kullanici@firma.com |
 Select-Object DisplayName,
@@ -11,7 +11,7 @@ ForwardingAddress,
 ForwardingSmtpAddress,
 DeliverToMailboxAndForward
 
-Tüm kullanıcıları bir liste halinde export:
+#Tüm kullanıcıları bir liste halinde export:
 
 Get-Mailbox -ResultSize Unlimited |
 Where-Object {$_.ForwardingAddress -or $_.ForwardingSmtpAddress} |
