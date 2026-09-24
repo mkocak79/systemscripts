@@ -1,0 +1,18 @@
+Connect-Connect-ExchangeOnline
+
+
+Get-Mailbox -RecipientTypeDetails SharedMailbox -ResultSize Unlimited |
+ForEach-Object {
+[PSCustomObject]@{
+DisplayName = $_.DisplayName
+PrimarySmtpAddress = $_.PrimarySmtpAddress
+Members = (
+Get-MailboxPermission $_.Identity |
+Where-Object {
+$_.AccessRights -contains "FullAccess" -and
+$_.User -notlike "NT AUTHORITY\SELF"
+} |
+Select-Object -ExpandProperty User
+) -join "; "
+}
+}
