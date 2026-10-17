@@ -1,0 +1,4 @@
+GET - https://graph.microsoft.com/v1.0/security/cases/ediscoveryCases/CaseID // SearchID alınır
+POST - https://graph.microsoft.com/v1.0/security/cases/ediscoveryCases/CaseID/searches/SearchID/purgeData
+Request Body; {“purgeType”: “recoverable”,“purgeAreas”: “mailboxes”}
+GET - https://graph.microsoft.com/v1.0/security/cases/ediscoveryCases/CaseID/operations
