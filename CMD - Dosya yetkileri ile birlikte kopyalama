@@ -1,1 +1,0 @@
-robocopy [source] [destination] /E /Z /COPYALL /r:2 /w:2
